@@ -2,7 +2,7 @@ FROM alpine:edge
 
 RUN apk add --no-cache chromium
 
-EXPOSE 9222
+EXPOSE 80
 
 ENTRYPOINT ["chromium-browser"]
 
@@ -32,7 +32,7 @@ CMD [ \
   # Skip first run wizards
   "--no-first-run", \
   # Expose port 9222 for remote debugging
-  "--remote-debugging-port=9222", \
+  "--remote-debugging-port=80", \
   # Disable fetching safebrowsing lists, likely redundant due to disable-background-networking
   "--safebrowsing-disable-auto-update", \
 ]
